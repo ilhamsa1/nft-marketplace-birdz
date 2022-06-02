@@ -1,6 +1,7 @@
 require("@nomiclabs/hardhat-waffle");
 
 const PROJECT_ID = 'ca706ca219734a0c95106e664ecf5067'
+const PRIVATE_KEY = process.env.PRIVATE_KEY
 // // This is a sample Hardhat task. To learn how to create your own go to
 // // https://hardhat.org/guides/create-task.html
 // task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
@@ -34,11 +35,11 @@ module.exports = {
     },
     mumbai: {
       url: `https://polygon-mumbai.infura.io/v3/${PROJECT_ID}`,
-      accounts: []
+      accounts: [PRIVATE_KEY]
     },
     mainnet: {
       url: `https://mainnet.infura.io/v3/${PROJECT_ID}`,
-      accounts: [],
+      accounts: [PRIVATE_KEY],
     }
   }
 };
